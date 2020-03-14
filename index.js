@@ -112,7 +112,7 @@ function buttonhandler(event) {
             el.classList.remove('button_active');
         });
         
-        const portfolioList = PORTFOLIO.querySelectorAll('div');
+        const portfolioList = PORTFOLIO.querySelectorAll('img');
         PORTFOLIO.insertAdjacentElement('afterbegin', portfolioList[portfolioList.length - 1]);
         PORTFOLIO.querySelectorAll('img').forEach(el => {
             el.classList.remove('portfolio-selected');
@@ -146,6 +146,10 @@ FORM.addEventListener('submit',  event => {
     FORM.reset();
     return false;
 });
-document.getElementById('btn-close').addEventListener('click', event => {
-    document.getElementById('pop-up_msg').classList.add('pop-up_hidden');
-});
+
+function popup_close(event) {
+    if (event.target.id === 'pop-up_msg' || event.target.id === 'btn-close') {
+        document.getElementById('pop-up_msg').classList.add('pop-up_hidden');
+    }
+}
+document.getElementById('btn-close').addEventListener('click', popup_close);
