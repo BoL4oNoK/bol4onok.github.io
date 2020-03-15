@@ -113,8 +113,7 @@ body {
     opacity: 0.5;
 }
 
-.slider .arrows:hover,
-.slider .arrows:focus {
+.slider .arrows:hover {
     opacity: 1;
 }
 
@@ -399,7 +398,7 @@ body {
 }
 
 .portfolio-wrapper {
-    padding: 62px 20px 20px 40px;
+    padding: 62px 20px 15px 40px;
 }
 
 .portfolio-header {
@@ -462,30 +461,24 @@ body {
 
 .portfolio-container {
     display: grid;
-    max-height: 612px;
+    max-height: 617px;
     overflow: hidden;
-    margin-top: 9px;
-    margin-bottom: 46px;
+    margin-top: 19px;
+    margin-bottom: 36px;
     grid-template-columns: repeat(4, 240px);
     grid-template-rows: repeat(3, 207px);
 }
 
 .portfolio-items {
     overflow: hidden;
-    display: flex;
 }
 
-.portfolio-container > img {
-    align-self: center;
-    justify-self: center;
-}
-
-.portfolio-items > img {
+.portfolio-image {
     margin: auto;
 }
 
 .portfolio-selected {
-    border: 5px dashed #F06C64;
+    border: 5px solid #F06C64;
 }
 
 .about_us {
@@ -792,14 +785,31 @@ body {
     top: 180px;
     left: calc(50vw - 150px);
     width: 300px;
-    background-color: #f06c64;
-    color: #f0d8d9;
+    background-color: #f2f2f2;
+    color: #666d89;
     padding: 5px;
     text-align: center;
+    border-radius: 20px;
+}
+
+.pop-up-header {
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #f48c8f;
+    margin-bottom: 5px;
 }
 
 .pop-up-text {
     text-align: left;
+    max-height: 115px;
+    overflow: hidden;
+}
+
+.pop-up-btn {
+    border-radius: 10px;
+    border: 1px solid #f48c8f;
+    width: 50px;
+    margin-top: 10px;
 }
 
 .pop-up_hidden {
