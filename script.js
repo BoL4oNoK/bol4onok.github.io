@@ -8,7 +8,7 @@ SECTIONs.forEach(el => {
     avgHeight += el.offsetHeight; 
 });
 let ScrollOffset = document.documentElement.clientHeight - parseInt(avgHeight / SECTIONs.length);
-ScrollOffset = (ScrollOffset < 0) ? document.querySelector('header').offsetHeight : ScrollOffset;
+ScrollOffset = (ScrollOffset < 30) ? document.querySelector('header').offsetHeight : ScrollOffset;
 
 /*** 1) Header ***/
 document.addEventListener('scroll', event => {
