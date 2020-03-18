@@ -2,6 +2,7 @@ const MENU = document.getElementById('main_menu');
 const BUTTONS = document.getElementById('buttons_list');
 const PORTFOLIO = document.getElementById('portfolio-list');
 
+/*** 1) Header ***/
 let avgHeight = 0;
 const SECTIONs = document.querySelectorAll('section');
 SECTIONs.forEach(el => {
@@ -10,7 +11,6 @@ SECTIONs.forEach(el => {
 let ScrollOffset = document.documentElement.clientHeight - parseInt(avgHeight / SECTIONs.length);
 ScrollOffset = (ScrollOffset < 30) ? document.querySelector('header').offsetHeight : ScrollOffset;
 
-/*** 1) Header ***/
 document.addEventListener('scroll', event => {
     let curPos = window.scrollY + ScrollOffset;
     const elList = document.querySelectorAll('section');
