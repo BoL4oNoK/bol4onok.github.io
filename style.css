@@ -33,7 +33,7 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    min-width: 768px;
+    max-width: 768px;
   }
 }
 @media (max-width: 375px) {
@@ -116,26 +116,21 @@ body {
 }
 
 .slider {
-  padding: 24px 0 51px;
   position: relative;
   user-select: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: calc(100vw * 0.46);
   -webkit-user-select: none;
   -moz-user-select: none;
 }
+@media (max-width: 768px) {
+  .slider {
+    height: calc(100vw * 0.58);
+  }
+}
 
-@media (min-width: 1020px) {
-  .slider {
-    height: 519px;
-  }
-}
-@media (max-width: 1020px) {
-  .slider {
-    height: 451px;
-  }
-}
 .slider .arrows {
   z-index: 5;
   cursor: pointer;
@@ -166,50 +161,52 @@ body {
   overflow: hidden;
 }
 
-#iPhone_Vert {
-  position: absolute;
-  top: 54px;
-  left: 52px;
-  width: 215px;
-  height: 458px;
-  border-radius: 27px;
+.phone_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+
+.vert {
+  background: url("./assets/img/phone-vertical.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 29%;
+  height: 80%;
+}
+
+.vert .phone-disp {
   cursor: pointer;
+  border-radius: 30px;
+  padding: 27.2% 5.8% 24.4% 5.7%;
+  width: 90%;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
-#iPhone_Vert .display {
-  position: absolute;
-  top: 65px;
-  left: 14px;
-  display: none;
-  width: 188px;
-  height: 333px;
-  background-color: #000000;
+.hor {
+  background: url("./assets/img/phone-horizontal.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 58.6%;
+  height: 40%;
 }
 
-#iPhone_Hor {
-  position: absolute;
-  top: 177px;
-  right: 77px;
-  width: 458px;
-  height: 215px;
-  border-radius: 27px;
+.hor .phone-disp {
   cursor: pointer;
+  border-radius: 30px;
+  padding: 2.8% 13.4% 2.8% 12.3%;
+  width: 94.7%;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
 }
 
-#iPhone_Hor .display {
-  position: absolute;
-  top: 14px;
-  left: 60px;
-  display: none;
-  width: 333px;
-  height: 188px;
-  border-radius: 2px;
-  background-color: #000000;
-}
-
-#iPhone_Vert .display-off,
-#iPhone_Hor .display-off {
-  display: block;
+.vert .phone-disp-off,
+.hor .phone-disp-off {
+  opacity: 0;
 }
 
 .slide_single {
@@ -223,8 +220,12 @@ body {
 
 .slide_2 {
   text-align: center;
-  padding-top: 40px;
+  padding: 43px 0 38px;
   left: 830px;
+}
+
+.slide_2 img {
+  width: 60%;
 }
 
 .bgBlue {

@@ -107,14 +107,14 @@ document.getElementById('arrow_right').addEventListener('click', slide_left);
 slider_init();
 
 /*** 3) Slider.Displays ***/
-document.getElementById('iPhone_Vert').addEventListener('click', event => {
-    const display = document.getElementById('iPhone_Vert').querySelector('div');
-    display.classList.toggle('display-off');
+const iPhone_Vert = document.getElementById('iPhone_Vert').querySelector('img');
+iPhone_Vert.addEventListener('click', event => {
+    iPhone_Vert.classList.toggle('phone-disp-off');
     event.preventDefault()
 });
-document.getElementById('iPhone_Hor').addEventListener('click', event => {
-    const display = document.getElementById('iPhone_Hor').querySelector('div');
-    display.classList.toggle('display-off');
+const iPhone_Hor = document.getElementById('iPhone_Hor').querySelector('img');
+iPhone_Hor.addEventListener('click', event => {
+    iPhone_Hor.classList.toggle('phone-disp-off');
     event.preventDefault()
 });
 
