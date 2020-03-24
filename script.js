@@ -40,6 +40,7 @@ const SLIDER = document.getElementById('slider');
 let slides = document.querySelectorAll('.slide_single');
 let current = 0;
 let sliderBlocked = false;
+let sliderWidth = SLIDER.offsetWidth
 
 
 function slider_init() {
@@ -47,10 +48,10 @@ function slider_init() {
     let slide2 = (current === 0) ? 1 : 0;
     SLIDER.innerHTML = '';
     let elem = slides[slide2].cloneNode(true);
-    elem.style.left = offset*830 - 830 + 'px';
-    slides[current].style.left = offset*830 + 'px';
+    elem.style.left = offset*sliderWidth - sliderWidth + 'px';
+    slides[current].style.left = offset*sliderWidth + 'px';
     offset += 1;
-    slides[slide2].style.left = offset*830 + 'px';
+    slides[slide2].style.left = offset*sliderWidth + 'px';
     SLIDER.appendChild(elem);
     SLIDER.appendChild(slides[current]);
     SLIDER.appendChild(slides[slide2]);
@@ -62,7 +63,7 @@ function slide_left() {
         let slides2 = document.querySelectorAll('.slide_single');
         let offset2 = -1;
         for (let i = 0; i < slides2.length; i += 1) {
-            slides2[i].style.left = offset2*830 - 830 +'px';
+            slides2[i].style.left = offset2*sliderWidth - sliderWidth +'px';
             offset2 += 1;
         }
         current += 1;
@@ -83,7 +84,7 @@ function slide_right() {
         let slides2 = document.querySelectorAll('.slide_single');
         let offset2 = -1;
         for (let i = 0; i < slides2.length; i += 1) {
-            slides2[i].style.left = offset2*830 + 830 +'px';
+            slides2[i].style.left = offset2*sliderWidth + sliderWidth +'px';
             offset2 += 1;
         }
         current += 1;
