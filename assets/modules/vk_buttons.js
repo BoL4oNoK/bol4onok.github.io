@@ -75,7 +75,7 @@ export default class VKButtons {
       if (type === 'keyup') {
         setTimeout(() => {
           this.elem.classList.remove('buttons-pressed');
-        }, 500);
+        }, 150);
       }
     }
   }

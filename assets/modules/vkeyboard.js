@@ -117,9 +117,11 @@ export default class VKeyboard {
     if (e.type === 'keydown') {
       switch (e.code) {
         case 'CapsLock':
-          this.caps = !this.caps;
-          this.CapsLock = !this.CapsLock;
-          this.render();
+          if (!e.repeat) {
+            this.caps = !this.caps;
+            this.CapsLock = !this.CapsLock;
+            this.render();
+          }
           break;
         case 'Backspace':
           this.deleteChar(-1);
@@ -271,7 +273,9 @@ export default class VKeyboard {
       this.textarea.value = str.slice(0, startPos) + str.slice(endPos, str.length);
     } else {
       startPos = (num < 0) ? startPos + num : startPos;
+      startPos = (startPos < 0) ? 0 : startPos;
       endPos = (num < 0) ? endPos : endPos + num;
+      endPos = (endPos > str.length) ? str.length : endPos;
       this.textarea.value = str.slice(0, startPos) + str.slice(endPos, str.length);
     }
     this.setSelectionPosition(startPos);
