@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Roboto Mono';
+  src: local('Roboto Mono'), url("./assets/fonts/Robotomono.woff2") format("woff2"), url("./assets/fonts/Robotomono.woff") format("woff"), url("./assets/fonts/Robotomono.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+	margin: 0;
+  padding: 0;
+
+  font-family: "Roboto Mono", 'Courier New', Courier, monospace;
+}
+
+.virtual_keyboard {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.textarea {
+  margin-left: 4px;
+  width: 790px;
+}
+
+.keyboard {
+  background-color: darkgrey;
+  padding: 10px;
+}
+
+.container {
+  margin-top: 5px;
+}
+
+.line_1,
+.line_2,
+.line_3,
+.line_4,
+.line_5 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line_5 {
+  width: 728px;
+}
+
+.buttons {
+  margin: 0;
+  height: 50px;
+  width: 50px;
+}
+
+.buttons-fixed,
+.buttons-pressed {
+  background-color: #778899;
+  border-radius: 30px;
+  color: #fffff0;
+  font-weight: bold;
+  border: 1px solid #fff5ee;
+}
+
+.buttons[data-button-type="Backspace"] {
+  width: 104px;
+}
+
+.buttons[data-button-type="CapsLock"],
+.buttons[data-button-type="Enter"],
+.buttons[data-button-type="ShiftLeft"],
+.buttons[data-button-type="ShiftRight"] {
+  width: 103px;
+}
+
+.buttons[data-button-type="ControlLeft"],
+.buttons[data-button-type="ControlRight"] {
+  width: 70px;
+}
+
+.buttons[data-button-type="Space"] {
+  width: 266px;
+}
