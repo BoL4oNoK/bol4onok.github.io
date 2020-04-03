@@ -8,7 +8,7 @@
 * {
 	margin: 0;
   padding: 0;
-
+  user-select: none;
   font-family: "Roboto Mono", 'Courier New', Courier, monospace;
 }
 
@@ -48,6 +48,8 @@
   margin: 0;
   height: 50px;
   width: 50px;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .buttons-fixed,
